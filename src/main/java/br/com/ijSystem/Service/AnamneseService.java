@@ -27,8 +27,8 @@ public class AnamneseService {
 	
 	public void inserir(AnamneseDTO anamnese) {
 		AnamneseEntities anamneseEntities = new AnamneseEntities(anamnese);
-		if (anamnese.getPacienteDTO() != null && anamnese.getPacienteDTO().getId() != null) {
-            PacienteEntities paciente = pacienteRepository.findById(anamnese.getPacienteDTO().getId()).orElse(null);
+		if (anamnese.getPaciente() != null && anamnese.getPaciente().getId() != null) {
+            PacienteEntities paciente = pacienteRepository.findById(anamnese.getPaciente().getId()).orElse(null);
             if (paciente != null) {
                 anamneseEntities.setPaciente(paciente);
             }

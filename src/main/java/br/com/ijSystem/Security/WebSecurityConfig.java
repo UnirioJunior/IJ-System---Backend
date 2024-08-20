@@ -50,7 +50,7 @@ public class WebSecurityConfig {
 			.exceptionHandling(exception -> exception.authenticationEntryPoint(unauthorizedHandler))
 			.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 			.authorizeHttpRequests(auth -> auth.requestMatchers("/auth/**").permitAll()
-											.requestMatchers("/anamnese/**").permitAll()
+											.requestMatchers("/**").permitAll() // remover
 											
 											.anyRequest().authenticated());
 		
