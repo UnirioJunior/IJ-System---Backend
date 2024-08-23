@@ -26,10 +26,14 @@ public class AnamneseEntities {
 	private Long id;
 	@Column(nullable = false, name = "anamnese_descricao", columnDefinition = "TEXT")
 	private String descricao;
-	
 	@ManyToOne
     @JoinColumn(name = "paciente_id", nullable = false)
     private PacienteEntities paciente;
+	@ManyToOne
+    @JoinColumn(name = "usuario_id", nullable = false) 
+    private UserEntities usuario;
+	@Column(nullable = false)
+	private String data;
 	
 	public AnamneseEntities () {
 		
@@ -41,8 +45,20 @@ public class AnamneseEntities {
 	        this.paciente = new PacienteEntities();
 	        this.paciente.setId(anamnese.getPaciente().getId());
 	    }
+	    if (anamnese.getUsuario() != null) {
+	        this.usuario = new UserEntities();
+	        this.usuario.setId(anamnese.getUsuario().getId());
+	    }
+	}
+	
+
+	public UserEntities getUsuario() {
+		return usuario;
 	}
 
+	public void setUsuario(UserEntities usuario) {
+		this.usuario = usuario;
+	}
 
 	public Long getId() {
 		return id;
@@ -66,6 +82,14 @@ public class AnamneseEntities {
 
 	public void setPaciente(PacienteEntities paciente) {
 		this.paciente = paciente;
+	}
+
+	public String getData() {
+		return data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
 	}
 
 	@Override

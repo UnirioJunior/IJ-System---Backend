@@ -2,7 +2,6 @@ package br.com.ijSystem.DTO;
 
 import java.util.Objects;
 
-import org.springframework.beans.BeanUtils;
 
 import br.com.ijSystem.Entities.AnamneseEntities;
 import lombok.Getter;
@@ -15,14 +14,30 @@ public class AnamneseDTO {
 	private Long id;
 	private String descricao;
 	private PacienteDTO paciente;
+	private UserDTO usuario;
+	private String data;
 	
 	
 	public AnamneseDTO(AnamneseEntities anamnese) {
-		BeanUtils.copyProperties(anamnese, this);
-	}
+        this.id = anamnese.getId();
+        this.descricao = anamnese.getDescricao();
+        
+        if (anamnese.getPaciente() != null) {
+            this.paciente = new PacienteDTO(anamnese.getPaciente());
+        }
+        
+        if (anamnese.getUsuario() != null) {
+            this.usuario = new UserDTO(anamnese.getUsuario());
+        }
+        
+        // Atribuir o valor de data
+        this.data = anamnese.getData();
+    }
+	
 	public AnamneseDTO () {
 		
 	}
+	
 	public Long getId() {
 		return id;
 	}
@@ -41,6 +56,23 @@ public class AnamneseDTO {
 	public void setPaciente(PacienteDTO pacienteDTO) {
 		this.paciente = pacienteDTO;
 	}
+
+	public String getData() {
+		return data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
+	public UserDTO getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(UserDTO usuario) {
+		this.usuario = usuario;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);

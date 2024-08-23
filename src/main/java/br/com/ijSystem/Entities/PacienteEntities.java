@@ -10,6 +10,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -23,6 +25,10 @@ public class PacienteEntities {
 	
 	@Column(nullable = false, name = "paciente_name")
 	private String name;
+	
+	@ManyToOne
+    @JoinColumn(name = "usuario_id", nullable = false) 
+    private UserEntities usuario;
 	
 	public PacienteEntities(PacienteDTO paciente) {
 		BeanUtils.copyProperties(paciente, this);
@@ -46,6 +52,15 @@ public class PacienteEntities {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+
+	public UserEntities getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(UserEntities usuario) {
+		this.usuario = usuario;
 	}
 
 	@Override
