@@ -18,6 +18,11 @@ public class AgendamentoService {
 		return agenRepositorie.findAll();
 	}
 	
+	public AgendamentoEntities buscarPorId(Long id) {
+        return agenRepositorie.findById(id)
+            .orElseThrow(() -> new RuntimeException("Agendamento não encontrado com o id: " + id));
+    }
+	
 	public void inserir(AgendamentoEntities javo) {
 		agenRepositorie.save(javo);
 	}

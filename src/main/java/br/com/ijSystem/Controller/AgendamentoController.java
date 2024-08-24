@@ -29,6 +29,12 @@ public class AgendamentoController {
 	public List<AgendamentoEntities> listarTodos() {
 		return agenService.listarTodos();
 	}
+	
+	@GetMapping("/{id}")
+    public ResponseEntity<AgendamentoEntities> buscarPorId(@PathVariable Long id) {
+        AgendamentoEntities agendamento = agenService.buscarPorId(id);
+        return ResponseEntity.ok(agendamento);
+    }
 
 	@PostMapping
 	public void  inserir(@RequestBody AgendamentoEntities paciente) {
