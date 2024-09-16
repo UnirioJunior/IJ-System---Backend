@@ -11,3 +11,6 @@ public interface UserRepository extends JpaRepository<UserEntities, Long> {
 	
 	Optional<UserEntities> findByLogin(String login);
 }
+
+
+                       

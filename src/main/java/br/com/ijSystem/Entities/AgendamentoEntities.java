@@ -1,5 +1,6 @@
 package br.com.ijSystem.Entities;
 
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 import jakarta.persistence.Column;
@@ -37,10 +38,10 @@ public class AgendamentoEntities {
     private String tipoAtendimento;
 
     @Column(nullable = false, name = "agendamento_inicio")
-    private String inicio;
+    private LocalDateTime inicio;  // Alterado para LocalDateTime
 
     @Column(nullable = false, name = "agendamento_fim")
-    private String fim;
+    private LocalDateTime fim;  // Alterado para LocalDateTime
 
     
     public AgendamentoEntities() {
@@ -118,29 +119,24 @@ public class AgendamentoEntities {
 	}
 
 
-
-	public String getInicio() {
+	public LocalDateTime getInicio() {
 		return inicio;
 	}
 
 
-
-	public void setInicio(String inicio) {
+	public void setInicio(LocalDateTime inicio) {
 		this.inicio = inicio;
 	}
 
 
-
-	public String getFim() {
+	public LocalDateTime getFim() {
 		return fim;
 	}
 
 
-
-	public void setFim(String fim) {
+	public void setFim(LocalDateTime fim) {
 		this.fim = fim;
 	}
-
 
 
 	@Override
