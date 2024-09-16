@@ -1,14 +1,17 @@
 br\com\ijSystem\Repositories\UserRepository.class
 br\com\ijSystem\Repositories\PacienteRepository.class
+br\com\ijSystem\AppConfig.class
 br\com\ijSystem\Controller\AnamneseController.class
 br\com\ijSystem\Entities\AnamneseEntities.class
 br\com\ijSystem\Entities\PacienteEntities.class
 br\com\ijSystem\DTO\UserDTO.class
 br\com\ijSystem\DTO\AuthenticationDTO.class
 br\com\ijSystem\Security\WebSecurityConfig.class
+br\com\ijSystem\Service\AgendamentoScheduler.class
 br\com\ijSystem\Controller\PacienteController.class
 br\com\ijSystem\Entities\UserEntities.class
 br\com\ijSystem\DTO\AnamneseDTO.class
+br\com\ijSystem\Controller\ConfigWhatsAppController.class
 br\com\ijSystem\Entities\AgendamentoEntities.class
 br\com\ijSystem\Repositories\UsuarioVerificadorRepository.class
 br\com\ijSystem\Controller\UserController.class
@@ -18,6 +21,8 @@ br\com\ijSystem\Controller\AuthController.class
 br\com\ijSystem\Entities\enums\TipoSituacaoUsuario.class
 br\com\ijSystem\Service\UserDetailsImpl.class
 br\com\ijSystem\Security\jwt\AuthEntryPointJwt.class
+br\com\ijSystem\Service\ConfigWhatsAppService.class
+br\com\ijSystem\Entities\ConfigWhatsAppEntiti.class
 br\com\ijSystem\Controller\AgendamentoController.class
 br\com\ijSystem\Security\jwt\AuthFilterToken.class
 br\com\ijSystem\Service\AgendamentoService.class
@@ -31,4 +36,6 @@ br\com\ijSystem\Service\AnamneseService.class
 br\com\ijSystem\MeuProjetoApplication.class
 br\com\ijSystem\Repositories\AgendamentoRepositories.class
 br\com\ijSystem\DTO\PacienteDTO.class
+br\com\ijSystem\SchedulerConfig.class
+br\com\ijSystem\Repositories\ConfigWhatsAppRepositories.class
 br\com\ijSystem\Service\AuthService.class

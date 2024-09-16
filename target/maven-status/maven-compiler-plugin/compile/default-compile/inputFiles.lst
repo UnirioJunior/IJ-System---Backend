@@ -1,7 +1,9 @@
 C:\IJ System\IJ System - Backend\src\main\java\br\com\ijSystem\Security\WebSecurityConfig.java
 C:\IJ System\IJ System - Backend\src\main\java\br\com\ijSystem\Service\UserDetailsImpl.java
+C:\IJ System\IJ System - Backend\src\main\java\br\com\ijSystem\Controller\ConfigWhatsAppController.java
 C:\IJ System\IJ System - Backend\src\main\java\br\com\ijSystem\DTO\AuthenticationDTO.java
 C:\IJ System\IJ System - Backend\src\main\java\br\com\ijSystem\DTO\AnamneseDTO.java
+C:\IJ System\IJ System - Backend\src\main\java\br\com\ijSystem\Entities\ConfigWhatsAppEntiti.java
 C:\IJ System\IJ System - Backend\src\main\java\br\com\ijSystem\MeuProjetoApplication.java
 C:\IJ System\IJ System - Backend\src\main\java\br\com\ijSystem\Entities\enums\TipoSituacaoUsuario.java
 C:\IJ System\IJ System - Backend\src\main\java\br\com\ijSystem\Repositories\PacienteRepository.java
@@ -14,6 +16,8 @@ C:\IJ System\IJ System - Backend\src\main\java\br\com\ijSystem\Repositories\Usua
 C:\IJ System\IJ System - Backend\src\main\java\br\com\ijSystem\Repositories\UserRepository.java
 C:\IJ System\IJ System - Backend\src\main\java\br\com\ijSystem\Repositories\AnamneseRepositories.java
 C:\IJ System\IJ System - Backend\src\main\java\br\com\ijSystem\Entities\PacienteEntities.java
+C:\IJ System\IJ System - Backend\src\main\java\br\com\ijSystem\Service\ConfigWhatsAppService.java
+C:\IJ System\IJ System - Backend\src\main\java\br\com\ijSystem\SchedulerConfig.java
 C:\IJ System\IJ System - Backend\src\main\java\br\com\ijSystem\Service\UserService.java
 C:\IJ System\IJ System - Backend\src\main\java\br\com\ijSystem\Controller\AgendamentoController.java
 C:\IJ System\IJ System - Backend\src\main\java\br\com\ijSystem\Controller\UserController.java
@@ -25,9 +29,12 @@ C:\IJ System\IJ System - Backend\src\main\java\br\com\ijSystem\Controller\AuthCo
 C:\IJ System\IJ System - Backend\src\main\java\br\com\ijSystem\Repositories\AgendamentoRepositories.java
 C:\IJ System\IJ System - Backend\src\main\java\br\com\ijSystem\Controller\PacienteController.java
 C:\IJ System\IJ System - Backend\src\main\java\br\com\ijSystem\Entities\UsuarioVerificadorEntity.java
+C:\IJ System\IJ System - Backend\src\main\java\br\com\ijSystem\Repositories\ConfigWhatsAppRepositories.java
+C:\IJ System\IJ System - Backend\src\main\java\br\com\ijSystem\AppConfig.java
 C:\IJ System\IJ System - Backend\src\main\java\br\com\ijSystem\Service\AgendamentoService.java
 C:\IJ System\IJ System - Backend\src\main\java\br\com\ijSystem\Service\EmailService.java
 C:\IJ System\IJ System - Backend\src\main\java\br\com\ijSystem\Security\jwt\AuthFilterToken.java
+C:\IJ System\IJ System - Backend\src\main\java\br\com\ijSystem\Service\AgendamentoScheduler.java
 C:\IJ System\IJ System - Backend\src\main\java\br\com\ijSystem\Security\jwt\JwtUtils.java
 C:\IJ System\IJ System - Backend\src\main\java\br\com\ijSystem\Security\jwt\AuthEntryPointJwt.java
 C:\IJ System\IJ System - Backend\src\main\java\br\com\ijSystem\DTO\PacienteDTO.java
