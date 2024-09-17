@@ -12,10 +12,9 @@ public class AgendamentoScheduler {
         this.agendamentoService = agendamentoService;
     }
 
-    // Executa a verificação a cada 15 minutos //
-    
-    @Scheduled(fixedRate = 5000)  //  900000
+    @Scheduled(fixedRate = 900000)  // 900000 ms = 15 minutos
     public void verificarAgendamentos() {
         agendamentoService.verificarAgendamentosEEnviarMensagens();
     }
+
 }

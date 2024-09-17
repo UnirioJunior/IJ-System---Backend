@@ -26,14 +26,16 @@ public class AgendamentoService {
 
     public void verificarAgendamentosEEnviarMensagens() {
         LocalDateTime agora = LocalDateTime.now();
-        LocalDateTime intervaloInicio = agora.minusSeconds(10);
-        LocalDateTime intervaloFim = agora.plusSeconds(10);
 
-        System.out.println("Verificando agendamentos entre " + intervaloInicio + " e " + intervaloFim);
+        // Verificação para o paciente (24 horas antes)
+        LocalDateTime intervaloInicioPaciente = agora.minusMinutes(1); // Pode ajustar a margem para 1 ou mais minutos
+        LocalDateTime intervaloFimPaciente = agora.plusMinutes(1);     // Tolerância de 1 minuto para encontrar o agendamento
 
-        // Verificar agendamentos para enviar mensagem para o paciente
+        System.out.println("Verificando agendamentos para pacientes entre " + intervaloInicioPaciente + " e " + intervaloFimPaciente);
+
         List<AgendamentoEntities> agendamentosPaciente = agendamentoRepository
-            .findByInicioBetween(intervaloInicio, intervaloFim);
+            .findByInicioBetween(intervaloInicioPaciente.minusHours(24), intervaloFimPaciente.minusHours(24)); // 24 horas antes
+
         System.out.println("Encontrados " + agendamentosPaciente.size() + " agendamentos para pacientes.");
 
         for (AgendamentoEntities agendamento : agendamentosPaciente) {
@@ -50,9 +52,15 @@ public class AgendamentoService {
             }
         }
 
-        // Verificar agendamentos para enviar mensagem para o numUser
+        // Verificação para o numUser (1 hora antes)
+        LocalDateTime intervaloInicioNumUser = agora.minusMinutes(1); // Pode ajustar a margem para 1 ou mais minutos
+        LocalDateTime intervaloFimNumUser = agora.plusMinutes(1);     // Tolerância de 1 minuto para encontrar o agendamento
+
+        System.out.println("Verificando agendamentos para numUser entre " + intervaloInicioNumUser + " e " + intervaloFimNumUser);
+
         List<AgendamentoEntities> agendamentosNumUser = agendamentoRepository
-            .findByInicioBetween(intervaloInicio, intervaloFim);
+            .findByInicioBetween(intervaloInicioNumUser.minusHours(1), intervaloFimNumUser.minusHours(1)); // 1 hora antes
+
         System.out.println("Encontrados " + agendamentosNumUser.size() + " agendamentos para numUser.");
 
         for (AgendamentoEntities agendamento : agendamentosNumUser) {
@@ -69,6 +77,7 @@ public class AgendamentoService {
             }
         }
     }
+
 
     public List<AgendamentoEntities> listarTodos() {
         return agendamentoRepository.findAll();
